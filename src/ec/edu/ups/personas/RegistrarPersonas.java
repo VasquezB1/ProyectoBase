@@ -24,7 +24,7 @@ public class RegistrarPersonas extends javax.swing.JInternalFrame {
      */
     public RegistrarPersonas(PersonaControlador personaControlador) {
         initComponents();
-        x = "x";
+                 x = "x";
         int a = Administrador.desktop.getWidth() - this.getWidth();
         int b = Administrador.desktop.getHeight() - this.getHeight();
         setLocation(a / 2, b / 2);
@@ -138,7 +138,7 @@ public class RegistrarPersonas extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
         jLabel8.setText("Rol:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Administrador", "Empleado", "Cliente" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -278,6 +278,7 @@ public class RegistrarPersonas extends javax.swing.JInternalFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
@@ -306,7 +307,7 @@ public class RegistrarPersonas extends javax.swing.JInternalFrame {
         String email = txtemail.getText();
         String user = txtusuario.getText();
         String contraseña = txtcontraseña.getText();
-        String rol = jComboBox1.getSelectedItem().toString();
+        String rol =Integer.toString (jComboBox1.getComponentCount());
         //String estado = txtestado.getText();
         
         personas.setId(txtid.getText());

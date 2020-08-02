@@ -59,10 +59,10 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jTextField1" alignment="0" pref="133" max="32767" attributes="0"/>
-                                                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtcedula" alignment="0" pref="133" max="32767" attributes="0"/>
+                                                      <Component id="txtnombre" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtapellido" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtdireccion" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtid" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
@@ -70,7 +70,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="txttelefono" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
-                                                      <Component id="txtcontraSEÑA1" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
+                                                      <Component id="txtcontraseña" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
                                                       <Component id="txtcelular" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
                                                       <Component id="txtemail" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
                                                   </Group>
@@ -99,7 +99,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtusuario1" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="txtusuario" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -121,15 +121,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtcedula" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtnombre" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtapellido" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtdireccion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -149,7 +149,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtusuario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtusuario" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -162,7 +162,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtcontraSEÑA1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtcontraseña" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -201,7 +201,7 @@
         <Property name="text" type="java.lang.String" value="ID:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtcedula">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -211,7 +211,7 @@
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="txtnombre">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -221,7 +221,7 @@
         <Property name="text" type="java.lang.String" value="Apellido:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="txtapellido">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -231,7 +231,7 @@
         <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="txtdireccion">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -288,6 +288,9 @@
         <Property name="text" type="java.lang.String" value="Crear Empleado"/>
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -335,9 +338,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txttelefono">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtusuario1">
+    <Component class="javax.swing.JTextField" name="txtusuario">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtcontraSE&#xd1;A1">
+    <Component class="javax.swing.JTextField" name="txtcontrase&#xf1;a">
     </Component>
   </SubComponents>
 </Form>

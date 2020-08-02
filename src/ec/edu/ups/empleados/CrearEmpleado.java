@@ -6,8 +6,11 @@
 package ec.edu.ups.empleados;
 
 import ec.edu.ups.controlador.PersonaControlador;
+import ec.edu.ups.modelo.Personas;
 import static ec.edu.ups.personas.EliminarPersona.x;
+import static ec.edu.ups.personas.RegistrarPersonas.x;
 import ec.edu.ups.vista.Principal.Administrador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,9 +27,10 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
         x = "x";
         int a = Administrador.desktop.getWidth() - this.getWidth();
         int b = Administrador.desktop.getHeight() - this.getHeight();
-
         setLocation(a / 2, b / 2);
         setVisible(true);
+        this.personaControlador = personaControlador;
+         txtid.setText(Integer.toString(personaControlador.buscarUltimoCodigo()+1));
     }
 
     /**
@@ -40,13 +44,13 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcedula = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtapellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtemail = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -61,8 +65,8 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         txttelefono = new javax.swing.JTextField();
-        txtusuario1 = new javax.swing.JTextField();
-        txtcontraSEÑA1 = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
+        txtcontraseña = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -125,6 +129,11 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
         jButton1.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
         jButton1.setText("Crear Empleado");
         jButton1.setActionCommand("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
         jLabel4.setText("Cédula:");
@@ -174,16 +183,16 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
                                                 .addGroup(layout.createSequentialGroup()
                                                     .addGap(48, 48, 48)
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                                        .addComponent(jTextField4)
-                                                        .addComponent(jTextField5)
-                                                        .addComponent(jTextField6)
+                                                        .addComponent(txtcedula, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                                                        .addComponent(txtnombre)
+                                                        .addComponent(txtapellido)
+                                                        .addComponent(txtdireccion)
                                                         .addComponent(txtid)))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(txttelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(txtcontraSEÑA1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(txtcontraseña, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(txtcelular, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(txtemail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                             .addGroup(layout.createSequentialGroup()
@@ -201,7 +210,7 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtusuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,14 +225,14 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel2)
@@ -240,7 +249,7 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtusuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addComponent(txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,7 +258,7 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(txtcontraSEÑA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -284,6 +293,53 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
         x=null;
     }//GEN-LAST:event_formInternalFrameClosing
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Personas personas = new Personas();
+        
+        String nombre = txtnombre.getText();
+        String apellido = txtapellido.getText();
+        String cedula = txtcedula.getText();
+        String direccion = txtdireccion.getText();
+        String telefono = txttelefono.getText();
+        String celular =txtcelular.getText();
+        String email = txtemail.getText();
+        String user = txtusuario.getText();
+        String contraseña = txtcontraseña.getText();
+        String rol = jComboBox3.getSelectedItem().toString();
+        //String estado = txtestado.getText();
+        
+        personas.setId(txtid.getText());
+        
+        personas.setNombres(nombre);
+        personas.setApellidos(apellido);
+        personas.setCedula(cedula);
+        personas.setDireccion(direccion);
+        personas.setTelefono(telefono);
+        personas.setCelular(celular);
+        personas.setEmail(email);
+        personas.setUsuario(user);
+        personas.setContrasenia(contraseña);       
+        personas.setRol_id(Integer.parseInt(rol));
+        //personas.setEstado((estado.charAt(0)));
+        
+        personaControlador.create(personas);
+        
+        
+        
+        JOptionPane.showMessageDialog(this, "Persona Registrada", "Crear Persona", JOptionPane.OK_OPTION);
+        txtcedula.setText("");
+        txtnombre.setText("");
+        txtapellido.setText("");
+        txtdireccion.setText("");    
+        txttelefono.setText("");
+        txtusuario.setText("");
+        txtcontraseña.setText("");
+        txtcelular.setText("");
+        txtemail.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -301,15 +357,15 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtapellido;
+    private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcelular;
-    private javax.swing.JTextField txtcontraSEÑA1;
+    private javax.swing.JTextField txtcontraseña;
+    private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
-    private javax.swing.JTextField txtusuario1;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
