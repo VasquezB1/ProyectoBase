@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PruebaReporte" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc3c8159-04d7-4c5f-9201-6babbd5ec1f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" isBold="true"/>
+	<style name="Detail" fontName="Arial"/>
+	<queryString>
+		<![CDATA[SELECT
+     SDF_FACTURA_CABECERAS."FAC_ID" AS SDF_FACTURA_CABECERAS_FAC_ID,
+     SDF_FACTURA_CABECERAS."FAC_FECHA" AS SDF_FACTURA_CABECERAS_FAC_FECH,
+     SDF_FACTURA_CABECERAS."FAC_SUBTOTAL" AS SDF_FACTURA_CABECERAS_FAC_SUBT,
+     SDF_FACTURA_CABECERAS."FAC_IVA" AS SDF_FACTURA_CABECERAS_FAC_IVA,
+     SDF_FACTURA_CABECERAS."FAC_TOTAL" AS SDF_FACTURA_CABECERAS_FAC_TOTA,
+     SDF_FACTURA_CABECERAS."FAC_ESTADO" AS SDF_FACTURA_CABECERAS_FAC_ESTA,
+     SDF_FACTURA_CABECERAS."SDF_PERSONAS_PER_CEDULA" AS SDF_FACTURA_CABECERAS_SDF_PERS,
+     SDF_PERSONAS."PER_CEDULA" AS SDF_PERSONAS_PER_CEDULA,
+     SDF_PERSONAS."PER_NOMBRES" AS SDF_PERSONAS_PER_NOMBRES,
+     SDF_PERSONAS."PER_APELLIDOS" AS SDF_PERSONAS_PER_APELLIDOS,
+     SDF_PERSONAS."PER_DIRECCION" AS SDF_PERSONAS_PER_DIRECCION,
+     SDF_PERSONAS."PER_TELEFONO" AS SDF_PERSONAS_PER_TELEFONO,
+     SDF_PERSONAS."PER_USERNAME" AS SDF_PERSONAS_PER_USERNAME,
+     SDF_PERSONAS."PER_CONTRASENIA" AS SDF_PERSONAS_PER_CONTRASENIA,
+     SDF_PERSONAS."SDF_ROLES_ROL_ID" AS SDF_PERSONAS_SDF_ROLES_ROL_ID,
+     SDF_PERSONAS."PER_ESTADO" AS SDF_PERSONAS_PER_ESTADO,
+     SDF_PRODUCTOS."PRO_ID" AS SDF_PRODUCTOS_PRO_ID,
+     SDF_PRODUCTOS."PRO_COD_BARRA" AS SDF_PRODUCTOS_PRO_COD_BARRA,
+     SDF_PRODUCTOS."PRO_NOMBRE" AS SDF_PRODUCTOS_PRO_NOMBRE,
+     SDF_PRODUCTOS."PRO_PRECIO" AS SDF_PRODUCTOS_PRO_PRECIO,
+     SDF_PRODUCTOS."PRO_NACIO" AS SDF_PRODUCTOS_PRO_NACIO,
+     SDF_PRODUCTOS."SDF_UNIDADES_MEDIDAS_MED_ID" AS SDF_PRODUCTOS_SDF_UNIDADES_MED,
+     SDF_PRODUCTOS."SDF_CATEGORIAS_CAT_ID" AS SDF_PRODUCTOS_SDF_CATEGORIAS_C,
+     SDF_PRODUCTOS."PRO_IVA" AS SDF_PRODUCTOS_PRO_IVA,
+     SDF_PRODUCTOS."PRO_STOCK" AS SDF_PRODUCTOS_PRO_STOCK,
+     SDF_FACTURAS_DETALLES."FDT_ID" AS SDF_FACTURAS_DETALLES_FDT_ID,
+     SDF_FACTURAS_DETALLES."FDT_CANTIDAD" AS SDF_FACTURAS_DETALLES_FDT_CANT,
+     SDF_FACTURAS_DETALLES."FDT_PRECIO_PRO" AS SDF_FACTURAS_DETALLES_FDT_PREC,
+     SDF_FACTURAS_DETALLES."FDT_PRECIO_IVA" AS SDF_FACTURAS_DETALLES_FDT_PREC,
+     SDF_FACTURAS_DETALLES."FDT_TOTAL" AS SDF_FACTURAS_DETALLES_FDT_TOTA,
+     SDF_FACTURAS_DETALLES."SDF_FACTURA_CABECERAS_FAC_ID" AS SDF_FACTURAS_DETALLES_SDF_FACT,
+     SDF_FACTURAS_DETALLES."SDF_PRODUCTOS_PRO_ID" AS SDF_FACTURAS_DETALLES_SDF_PROD
+FROM
+     "BASEFARMACIA"."SDF_PERSONAS" SDF_PERSONAS INNER JOIN "BASEFARMACIA"."SDF_FACTURA_CABECERAS" SDF_FACTURA_CABECERAS ON SDF_PERSONAS."PER_CEDULA" = SDF_FACTURA_CABECERAS."SDF_PERSONAS_PER_CEDULA"
+     INNER JOIN "BASEFARMACIA"."SDF_FACTURAS_DETALLES" SDF_FACTURAS_DETALLES ON SDF_FACTURA_CABECERAS."FAC_ID" = SDF_FACTURAS_DETALLES."SDF_FACTURA_CABECERAS_FAC_ID"
+     INNER JOIN "BASEFARMACIA"."SDF_PRODUCTOS" SDF_PRODUCTOS ON SDF_FACTURAS_DETALLES."SDF_PRODUCTOS_PRO_ID" = SDF_PRODUCTOS."PRO_ID"]]>
+	</queryString>
+	<field name="SDF_FACTURA_CABECERAS_FAC_ID" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURA_CABECERAS_FAC_FECH" class="java.sql.Timestamp"/>
+	<field name="SDF_FACTURA_CABECERAS_FAC_SUBT" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURA_CABECERAS_FAC_IVA" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURA_CABECERAS_FAC_TOTA" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURA_CABECERAS_FAC_ESTA" class="java.lang.String"/>
+	<field name="SDF_FACTURA_CABECERAS_SDF_PERS" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_CEDULA" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_NOMBRES" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_APELLIDOS" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_DIRECCION" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_TELEFONO" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_USERNAME" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_PER_CONTRASENIA" class="java.lang.String"/>
+	<field name="SDF_PERSONAS_SDF_ROLES_ROL_ID" class="java.math.BigDecimal"/>
+	<field name="SDF_PERSONAS_PER_ESTADO" class="java.lang.String"/>
+	<field name="SDF_PRODUCTOS_PRO_ID" class="java.math.BigDecimal"/>
+	<field name="SDF_PRODUCTOS_PRO_COD_BARRA" class="java.lang.String"/>
+	<field name="SDF_PRODUCTOS_PRO_NOMBRE" class="java.lang.String"/>
+	<field name="SDF_PRODUCTOS_PRO_PRECIO" class="java.math.BigDecimal"/>
+	<field name="SDF_PRODUCTOS_PRO_NACIO" class="java.lang.String"/>
+	<field name="SDF_PRODUCTOS_SDF_UNIDADES_MED" class="java.math.BigDecimal"/>
+	<field name="SDF_PRODUCTOS_SDF_CATEGORIAS_C" class="java.math.BigDecimal"/>
+	<field name="SDF_PRODUCTOS_PRO_IVA" class="java.lang.String"/>
+	<field name="SDF_PRODUCTOS_PRO_STOCK" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_FDT_ID" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_FDT_CANT" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_FDT_PREC" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_FDT_TOTA" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_SDF_FACT" class="java.math.BigDecimal"/>
+	<field name="SDF_FACTURAS_DETALLES_SDF_PROD" class="java.math.BigDecimal"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="72">
+				<textField>
+					<reportElement x="164" y="4" width="100" height="20" uuid="f98255a1-ff43-44c3-a3b1-62644b008cc0"/>
+					<textFieldExpression><![CDATA[$F{SDF_PERSONAS_PER_NOMBRES}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="6" width="263" height="33" uuid="da47bdee-e47b-4242-ae11-e6f0166e30fe"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="65a9d764-f18d-4c73-a080-b69197e49a88"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Wood SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="6" width="333" height="56" forecolor="#000066" uuid="da0cb3db-a904-42ef-a1b0-88f2a04ea67f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kristen ITC" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Registro Facturas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="122" height="62" uuid="1ed388b1-ff07-4ce1-9ced-b3e4ed798204"/>
+				<imageExpression><![CDATA["C:\\Users\\Edison\\Documents\\NetBeansProjects\\ProyectoFinalFarmacia\\src\\ec\\edu\\ups\\imageness\\universidad-politecnica-salesiana-infodesarrollo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="33" y="0" width="42" height="20" forecolor="#CC0000" uuid="1ad66947-5b13-4d47-9f33-764179fe6a2b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID_FAC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="1" width="34" height="20" forecolor="#CC0000" uuid="24f080c3-0830-46d3-b2ab-5f113825dd7f"/>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="1" width="38" height="20" forecolor="#CC0000" uuid="95dab3d2-f1a6-4594-b577-ac1e29c4c0de"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SUBT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="1" width="45" height="20" forecolor="#CC0000" uuid="0dea4296-f68f-44fb-a618-93ca0758d9df"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[IVA 12%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="1" width="46" height="20" forecolor="#CC0000" uuid="f86ee4ef-6698-42d8-945c-9adc98d85380"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="0" width="47" height="20" forecolor="#CC0000" uuid="e6f7c84b-8d17-4ebc-aadd-3048c54157f6"/>
+				<text><![CDATA[CÉDULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="1" width="57" height="20" forecolor="#CC0000" uuid="e9e7afbc-0f70-4e32-994a-92a80d06aa00"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="1" width="63" height="20" forecolor="#CC0000" uuid="f4139741-9217-4ee9-92fe-2ed6a940f59f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="1" width="66" height="20" forecolor="#CC0000" uuid="b32e49a9-f63a-400d-8332-3d4fcf3bbcb9"/>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="1" width="32" height="20" forecolor="#CC0000" uuid="0c2d26f9-bb4b-46dc-bff1-ae11bf8fd8cd"/>
+				<text><![CDATA[CANT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="1" width="52" height="20" forecolor="#CC0000" uuid="f5eb6212-4e97-45aa-80ec-77e917cf723e"/>
+				<text><![CDATA[PRECIO U.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-13" y="0" width="49" height="20" forecolor="#990000" uuid="31073eba-3cf0-4757-b2c1-a96a36ae2697"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4af74123-03da-40d3-99f8-c226da7da53c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="440" y="2" width="38" height="20" uuid="668b916b-7b86-4740-a494-ad84b6dcde7a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_SUBT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="2" width="45" height="20" uuid="87f79563-8dca-4017-ad3e-dcb877cd2d9a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_IVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="2" width="46" height="20" uuid="dc55c49a-d810-4254-abae-3422440971e6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_TOTA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="0" width="21" height="20" uuid="37ab4d31-1cba-40b7-ba4d-ddf851e16c26"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="1" width="48" height="20" uuid="ff10e3ab-38d8-45c7-abaf-536e7052c8cd"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_FECH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="2" width="61" height="20" uuid="4ea44baa-0c90-43a1-a26f-dbcfc847df87"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_SDF_PERS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="1" width="43" height="20" uuid="d3cbf18f-097c-4938-9868-6b0da0330ef5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_PERSONAS_PER_NOMBRES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="1" width="63" height="20" uuid="96d18451-2a07-4dba-a8e8-ea873d5f118e"/>
+				<textFieldExpression><![CDATA[$F{SDF_PERSONAS_PER_APELLIDOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="1" width="66" height="20" uuid="537566b4-9275-470e-b21f-5eec87192ad1"/>
+				<textFieldExpression><![CDATA[$F{SDF_PRODUCTOS_PRO_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="2" width="43" height="20" uuid="12c8bec3-a2e8-4afc-8ef4-1794d136b977"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURAS_DETALLES_FDT_CANT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="1" width="28" height="20" uuid="31b92fe1-3a2a-431d-b1a6-e3ba00bbaad3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SDF_PRODUCTOS_PRO_PRECIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="18" height="20" uuid="61e95d4d-1792-4456-a2f1-5981a9ed3d97"/>
+				<textFieldExpression><![CDATA[$F{SDF_FACTURA_CABECERAS_FAC_ESTA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="168eb2f1-d084-4367-b730-44243d877bec"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="de6b56a6-5bf6-45c1-9ae8-11f7ca897901"/>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="79019361-8f63-4545-95bf-6b8c2a78fbe5"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c9c7d241-9841-407e-8422-6bc614ea2812"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
