@@ -702,7 +702,7 @@ public class Administrador extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            Desktop.getDesktop().browse(new URI("https://github.com/DomenicaC/ProyectoFinalFarmacia"));
+            Desktop.getDesktop().browse(new URI("https://github.com/VasquezB1/ProyectoBase"));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error el URL no existe");
         }
