@@ -198,7 +198,7 @@
                   <Image iconType="3" name="/ec/edu/ups/imageness/actualizar2.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="112"/>
-                <Property name="text" type="java.lang.String" value="Modificar Cliente"/>
+                <Property name="text" type="java.lang.String" value="Modificar Empleado"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pasteMenuItemActionPerformed"/>
