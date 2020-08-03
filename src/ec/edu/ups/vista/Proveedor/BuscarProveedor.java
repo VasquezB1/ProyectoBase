@@ -12,10 +12,7 @@ import static ec.edu.ups.vista.Proveedor.CrearProveedor.x;
 import javax.swing.JOptionPane;
 
 
-/**
- *
- * @author Jose Guillermo Quinde
- */
+
 public class BuscarProveedor extends javax.swing.JInternalFrame {
 
     /**
@@ -183,10 +180,12 @@ public class BuscarProveedor extends javax.swing.JInternalFrame {
 
     private void jTIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTIDKeyPressed
         // TODO add your handling code here:
+        
         codigo=Integer.parseInt(jTID.getText());
         Proveedor p=proveedorControlador.BuscarProveedorCodigo(codigo);
         txtempresa.setText(p.getEmpresa());
         txtresponsable.setText(p.getResponsable());
+        
     }//GEN-LAST:event_jTIDKeyPressed
 
 

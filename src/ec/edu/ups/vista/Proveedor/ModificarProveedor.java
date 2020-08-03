@@ -14,10 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jose Guillermo Quinde
- */
+
 public class ModificarProveedor extends javax.swing.JInternalFrame {
 
     /**
@@ -28,6 +25,7 @@ public class ModificarProveedor extends javax.swing.JInternalFrame {
     public ModificarProveedor(ProveedorControlador proveedorControlador) {
         initComponents();
           x = "x";
+          
         int a = Administrador.desktop.getWidth() - this.getWidth();
         int b = Administrador.desktop.getHeight() - this.getHeight();
 
@@ -201,6 +199,7 @@ public class ModificarProveedor extends javax.swing.JInternalFrame {
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
         // TODO add your handling code here:
         int codigo=Integer.parseInt(txtId.getText());
+        
         Proveedor p=proveedorControlador.BuscarProveedorCodigo(codigo);
         txtExpresa.setText(p.getEmpresa());
         txtResponsable.setText(p.getResponsable());
@@ -215,6 +214,7 @@ public class ModificarProveedor extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int codigo=Integer.parseInt(txtId.getText());
         Proveedor p=proveedorControlador.BuscarProveedorCodigo(codigo);
+        
         txtExpresa.setText(p.getEmpresa());
         txtResponsable.setText(p.getResponsable());
     }//GEN-LAST:event_txtIdKeyPressed

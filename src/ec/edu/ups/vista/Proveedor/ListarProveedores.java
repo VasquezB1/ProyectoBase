@@ -12,10 +12,7 @@ import ec.edu.ups.vista.Principal.Administrador;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Jose Guillermo Quinde
- */
+
 public class ListarProveedores extends javax.swing.JInternalFrame {
 
     /**
@@ -45,9 +42,10 @@ public class ListarProveedores extends javax.swing.JInternalFrame {
         Set<Proveedor> Lista = proveedorControlador.listaProveedor();
         for (Proveedor p : Lista) {
             Object[] datos = {
-                p.getId(),
-                p.getEmpresa(),
+               p.getId(),
+               p.getEmpresa(),
                p.getResponsable()};
+            
             modelo.addRow(datos);
         }
     }
@@ -64,6 +62,7 @@ public class ListarProveedores extends javax.swing.JInternalFrame {
 
         @Override
         public boolean isCellEditable(int row, int column) {
+            
             return this.TblColums[column];
         }
     

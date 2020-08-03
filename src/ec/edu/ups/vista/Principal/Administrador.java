@@ -837,6 +837,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (crearProducto == null || crearProducto.isVisible() == false) {
                     crearProducto = new CrearProducto(controladorProducto, categoriaControlador,unidadesControlador);
                     desktop.add(crearProducto);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -854,6 +855,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (buscarProducto == null || buscarProducto.isVisible() == false) {
                     buscarProducto = new BuscarProducto(controladorProducto);
                     desktop.add(buscarProducto);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -872,6 +874,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (modificarProducto == null || modificarProducto.isVisible() == false) {
                     modificarProducto = new ModificarProducto(controladorProducto, categoriaControlador, unidadesControlador);
                     desktop.add(modificarProducto);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -956,6 +959,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (crearCategoria == null || crearCategoria.isVisible() == false) {
                     crearCategoria = new CrearCategoria(categoriaControlador);
                     desktop.add(crearCategoria);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -990,6 +994,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (crearProveedor == null || crearProveedor.isVisible() == false) {
                     crearProveedor = new CrearProveedor(proveedorControlador);
                     desktop.add(crearProveedor);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -1007,6 +1012,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (buscarProveedor == null || buscarProveedor.isVisible() == false) {
                     buscarProveedor = new BuscarProveedor(proveedorControlador);
                     desktop.add(buscarProveedor);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -1024,6 +1030,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (modificarProveedor == null || modificarProveedor.isVisible() == false) {
                     modificarProveedor = new ModificarProveedor(proveedorControlador);
                     desktop.add(modificarProveedor);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");
@@ -1041,6 +1048,7 @@ public class Administrador extends javax.swing.JFrame {
                 if (listarProveedores == null || listarProveedores.isVisible() == false) {
                     listarProveedores = new ListarProveedores(proveedorControlador);
                     desktop.add(listarProveedores);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "La ventana ya esta abierta");

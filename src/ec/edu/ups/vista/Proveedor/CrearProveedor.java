@@ -13,10 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jose Guillermo Quinde
- */
+
 public class CrearProveedor extends javax.swing.JInternalFrame {
 
     /**
@@ -172,12 +169,11 @@ public class CrearProveedor extends javax.swing.JInternalFrame {
         prov.setEmpresa(txtEmpresa.getText());
         prov.setResponsable(txtResponsable.getText());
         proveedorControlador.createProveedor(prov);
-        
-         JOptionPane.showMessageDialog(this, "Proveedor Creado", "Registrar Proveedor", JOptionPane.OK_OPTION);
-//         CrearPP.ComboProveedores.removeAllItems();
+        JOptionPane.showMessageDialog(this, "Proveedor Creado", "Registrar Proveedor", JOptionPane.OK_OPTION);
         try {
             CrearPP.mostrarProveedores();
         } catch (Exception ex) {
+            
             ex.printStackTrace();
         }
         int codigo=proveedorControlador.buscarUltimoCodigo()+1;
