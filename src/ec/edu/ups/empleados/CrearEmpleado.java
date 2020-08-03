@@ -32,6 +32,9 @@ public class CrearEmpleado extends javax.swing.JInternalFrame {
         this.personaControlador = personaControlador;
          txtid.setText(Integer.toString(personaControlador.buscarUltimoCodigo()+1));
     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
