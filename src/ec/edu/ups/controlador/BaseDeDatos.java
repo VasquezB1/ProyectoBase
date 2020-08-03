@@ -54,6 +54,7 @@ public class BaseDeDatos {
     }
     
     public void conectar(){
+        //Conexiones a la base
         String url = "jdbc:oracle:thin:@localhost:1521:orcl";
        // String url = "jdbc:oracle:thin:@localhost:1521:xe";
         String user = "HiperMercado";
