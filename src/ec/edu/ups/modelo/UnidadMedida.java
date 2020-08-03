@@ -7,7 +7,7 @@ package ec.edu.ups.modelo;
 
 /**
  *
- * @author Edison
+ * @author Carmen
  */
 public class UnidadMedida {
     private int id;
