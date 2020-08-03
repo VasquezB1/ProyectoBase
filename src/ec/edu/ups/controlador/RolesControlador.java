@@ -14,7 +14,7 @@ import java.util.Set;
 
 /**
  *
- * @author Jose Guillermo Quinde
+ * 
  */
 public class RolesControlador {
     private BaseDeDatos db;
